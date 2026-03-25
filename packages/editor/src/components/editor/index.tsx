@@ -32,6 +32,7 @@ import { SceneLoader } from '../ui/scene-loader'
 import { AppSidebar } from '../ui/sidebar/app-sidebar'
 import type { SettingsPanelProps } from '../ui/sidebar/panels/settings-panel'
 import type { SitePanelProps } from '../ui/sidebar/panels/site-panel'
+import { RetiroOverlay } from '../normativa/retiro-overlay'
 import { CustomCameraControls } from './custom-camera-controls'
 import { ExportManager } from './export-manager'
 import { FloatingActionMenu } from './floating-action-menu'
@@ -459,6 +460,7 @@ export default function Editor({
               <ThumbnailGenerator onThumbnailCapture={onThumbnailCapture} />
               <PresetThumbnailGenerator />
               {!isPreviewMode && <SiteEdgeLabels />}
+              {!isPreviewMode && <RetiroOverlay />}
               {isPreviewMode && <InteractiveSystem />}
             </Viewer>
           </div>

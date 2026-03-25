@@ -35,6 +35,7 @@ import { cn } from './../../../../../lib/utils'
 import useEditor from './../../../../../store/use-editor'
 import { useUploadStore } from '../../../../../store/use-upload'
 import { InlineRenameInput } from './inline-rename-input'
+import { NormativaSection } from './normativa-section'
 import { focusTreeNode, TreeNode } from './tree-node'
 import { TreeNodeDragProvider } from './tree-node-drag'
 
@@ -1505,6 +1506,7 @@ export function SitePanel({ projectId, onUploadAsset, onDeleteAsset }: SitePanel
                 transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
               >
                 <PropertyLineSection />
+                <NormativaSection />
               </motion.div>
             )}
           </AnimatePresence>
