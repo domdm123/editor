@@ -51,7 +51,7 @@ export function IconRail({ activePanel, onPanelChange, appMenuButton, className 
               <img
                 alt="Servidos Planos"
                 className="h-7 w-7 object-contain"
-                src="/servidos-logo.svg"
+                src="/servidos-icon.png"
               />
             </div>
           </TooltipTrigger>
