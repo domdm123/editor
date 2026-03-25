@@ -88,9 +88,9 @@ function EditorSceneCrashFallback() {
   return (
     <div className="fixed inset-0 z-80 flex items-center justify-center bg-background/95 p-4 text-foreground">
       <div className="w-full max-w-md rounded-2xl border border-border/60 bg-background p-6 shadow-xl">
-        <h2 className="font-semibold text-lg">The editor scene failed to render</h2>
+        <h2 className="font-semibold text-lg">El editor no pudo renderizar la escena</h2>
         <p className="mt-2 text-muted-foreground text-sm">
-          You can retry the scene or return home without reloading the whole app shell.
+          Podés reintentar la escena o volver al inicio sin recargar toda la aplicación.
         </p>
         <div className="mt-4 flex items-center gap-2">
           <button
@@ -98,13 +98,13 @@ function EditorSceneCrashFallback() {
             onClick={() => window.location.reload()}
             type="button"
           >
-            Reload editor
+            Recargar editor
           </button>
           <a
             className="rounded-md border border-border bg-background px-3 py-2 font-medium text-sm hover:bg-accent/40"
             href="/"
           >
-            Back to home
+            Volver al inicio
           </a>
         </div>
       </div>
@@ -138,16 +138,16 @@ type CameraControlHint = {
 
 const EDITOR_CAMERA_CONTROL_HINTS: CameraControlHint[] = [
   {
-    action: 'Pan',
+    action: 'Desplazar',
     keys: [{ value: 'Space' }, { value: 'Left click' }],
   },
-  { action: 'Rotate', keys: [{ value: 'Right click' }] },
+  { action: 'Rotar', keys: [{ value: 'Right click' }] },
   { action: 'Zoom', keys: [{ value: 'Scroll' }] },
 ]
 
 const PREVIEW_CAMERA_CONTROL_HINTS: CameraControlHint[] = [
-  { action: 'Pan', keys: [{ value: 'Left click' }] },
-  { action: 'Rotate', keys: [{ value: 'Right click' }] },
+  { action: 'Desplazar', keys: [{ value: 'Left click' }] },
+  { action: 'Rotar', keys: [{ value: 'Right click' }] },
   { action: 'Zoom', keys: [{ value: 'Scroll' }] },
 ]
 
@@ -295,7 +295,7 @@ function ViewerCanvasControlsHint({
             </button>
           </TooltipTrigger>
           <TooltipContent side="bottom" sideOffset={8}>
-            Dismiss
+            Cerrar
           </TooltipContent>
         </Tooltip>
       </section>

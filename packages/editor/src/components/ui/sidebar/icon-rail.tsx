@@ -43,8 +43,21 @@ export function IconRail({ activePanel, onPanelChange, appMenuButton, className 
         className,
       )}
     >
-      {/* App menu slot */}
-      {appMenuButton}
+      {/* App menu slot — Servidos logo by default */}
+      {appMenuButton ?? (
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="mb-0.5 flex h-9 w-9 items-center justify-center">
+              <img
+                alt="Servidos Planos"
+                className="h-7 w-7 object-contain"
+                src="/servidos-logo.svg"
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent side="right">Servidos Planos</TooltipContent>
+        </Tooltip>
+      )}
 
       {/* Divider */}
       <div className="mb-1 h-px w-8 bg-border/50" />

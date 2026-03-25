@@ -177,11 +177,11 @@ export function PascalRadio() {
       <div className="flex items-center justify-between gap-2 px-3 py-2 font-medium text-sm">
         <div className="flex items-center gap-2">
           <Disc3 className={cn('h-4 w-4 shrink-0', isRadioPlaying && 'animate-spin')} />
-          <span className="hidden whitespace-nowrap sm:inline">Radio Pascal</span>
+          <span className="hidden whitespace-nowrap sm:inline">Radio Servidos</span>
         </div>
         <div className="flex items-center gap-2">
           <div
-            aria-label={isRadioPlaying ? 'Pause' : 'Play'}
+            aria-label={isRadioPlaying ? 'Pausar' : 'Reproducir'}
             className="cursor-pointer rounded-sm bg-accent/30 p-1 transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-sm"
             onClick={(e) => {
               e.stopPropagation()
@@ -204,7 +204,7 @@ export function PascalRadio() {
             )}
           </div>
           <button
-            aria-label="Radio Settings"
+            aria-label="Ajustes de radio"
             className={cn(
               'cursor-pointer rounded-sm p-1 transition-all hover:bg-accent hover:text-accent-foreground',
               isOpen && 'bg-accent text-accent-foreground',
@@ -231,10 +231,10 @@ export function PascalRadio() {
               <div className="mb-3 h-px w-full bg-border/50" />
               {/* Current song info with prev/next */}
               <div>
-                <p className="mb-2 text-muted-foreground text-xs">Now Playing</p>
+                <p className="mb-2 text-muted-foreground text-xs">Reproduciendo</p>
                 <div className="flex items-center justify-between gap-2">
                   <button
-                    aria-label="Previous"
+                    aria-label="Anterior"
                     className="shrink-0 rounded-full p-1.5 transition-colors hover:bg-accent"
                     onClick={handlePrevious}
                   >
@@ -247,7 +247,7 @@ export function PascalRadio() {
                     {currentTrack.title}
                   </p>
                   <button
-                    aria-label="Next"
+                    aria-label="Siguiente"
                     className="shrink-0 rounded-full p-1.5 transition-colors hover:bg-accent"
                     onClick={handleNext}
                   >

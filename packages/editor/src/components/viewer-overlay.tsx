@@ -369,8 +369,8 @@ export const ViewerOverlay = ({
             <ActionButton
               className={
                 cameraMode === 'orthographic'
-                  ? 'bg-violet-500/20 text-violet-400'
-                  : 'hover:bg-white/5 hover:text-violet-400'
+                  ? 'bg-orange-500/20 text-orange-400'
+                  : 'hover:bg-white/5 hover:text-orange-400'
               }
               label={`Cámara: ${cameraMode === 'perspective' ? 'Perspectiva' : 'Ortográfica'}`}
               onClick={() =>
