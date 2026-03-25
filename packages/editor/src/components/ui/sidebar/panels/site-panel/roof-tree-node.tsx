@@ -67,7 +67,7 @@ export function RoofTreeNode({ node, depth, isLast }: RoofTreeNodeProps) {
   }, [isDropTarget, expanded])
 
   const segmentCount = segments.length
-  const defaultName = `Roof (${segmentCount} segment${segmentCount !== 1 ? 's' : ''})`
+  const defaultName = `Techo (${segmentCount} segmento${segmentCount !== 1 ? 's' : ''})`
 
   // Hide the dragged segment from every roof while dragging
   const visibleSegments = drag ? segments.filter((seg) => seg.id !== drag.nodeId) : segments
@@ -137,6 +137,20 @@ export function RoofTreeNode({ node, depth, isLast }: RoofTreeNodeProps) {
   )
 }
 
+const roofTypeLabels: Record<string, string> = {
+  hip: 'A cuatro aguas',
+  gable: 'A dos aguas',
+  shed: 'A un agua',
+  flat: 'Plano',
+  gambrel: 'Gambrel',
+  dutch: 'Holandés',
+  mansard: 'Mansarda',
+}
+
+function roofTypeLabel(type: string): string {
+  return roofTypeLabels[type] ?? (type.charAt(0).toUpperCase() + type.slice(1))
+}
+
 function RoofSegmentTreeNode({
   node,
   depth,
@@ -163,13 +177,13 @@ function RoofSegmentTreeNode({
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
       if (e.button !== 0) return
-      const label = `${node.roofType.charAt(0).toUpperCase() + node.roofType.slice(1)} (${node.width.toFixed(1)}×${node.depth.toFixed(1)}m)`
+      const label = `${roofTypeLabel(node.roofType)} (${node.width.toFixed(1)}×${node.depth.toFixed(1)}m)`
       startDrag(node.id, node.type, node.parentId as string, label, e.clientX, e.clientY)
     },
     [node.id, node.type, node.parentId, node.roofType, node.width, node.depth, startDrag],
   )
 
-  const defaultName = `${node.roofType.charAt(0).toUpperCase() + node.roofType.slice(1)} (${node.width.toFixed(1)}x${node.depth.toFixed(1)}m)`
+  const defaultName = `${roofTypeLabel(node.roofType)} (${node.width.toFixed(1)}x${node.depth.toFixed(1)}m)`
 
   return (
     <div data-drop-child={node.id}>

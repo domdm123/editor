@@ -136,6 +136,18 @@ export const ViewerOverlay = ({
     <>
       {/* Unified top-left card */}
       <div className="dark absolute top-4 left-4 z-20 flex flex-col gap-3 text-foreground">
+        {/* Tagline */}
+        <div className="pointer-events-none flex items-center gap-2 px-1">
+          <img
+            alt="Servidos"
+            className="h-5 w-5 object-contain opacity-80"
+            src="/servidos-icon.png"
+          />
+          <span className="font-medium text-[11px] text-muted-foreground/80 tracking-tight">
+            Diseñá tu casa soñada en Argentina. 2D y 3D.
+          </span>
+        </div>
+
         <div className="pointer-events-auto flex min-w-[200px] flex-col overflow-hidden rounded-2xl border border-border/40 bg-background/95 shadow-lg backdrop-blur-xl transition-colors duration-200 ease-out">
           {/* Project info + back */}
           <div className="flex items-center gap-3 px-3 py-2.5">

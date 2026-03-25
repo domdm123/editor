@@ -139,10 +139,17 @@ export function NormativaSection() {
   return (
     <div className="border-border/50 border-b">
       {/* Header */}
-      <button
-        className="relative flex w-full items-center justify-between py-2 pr-3 pl-10 text-left"
+      <div
+        className="relative flex w-full cursor-pointer items-center justify-between py-2 pr-3 pl-10 text-left"
         onClick={() => setExpanded(!expanded)}
-        type="button"
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            setExpanded(!expanded)
+          }
+        }}
+        role="button"
+        tabIndex={0}
       >
         {/* Tree decorations */}
         <div className="absolute top-0 bottom-0 left-[21px] w-px bg-border/50" />
@@ -181,7 +188,7 @@ export function NormativaSection() {
             className={`h-3.5 w-3.5 text-muted-foreground transition-transform ${expanded ? 'rotate-0' : '-rotate-90'}`}
           />
         </div>
-      </button>
+      </div>
 
       {/* Collapsed summary */}
       {!expanded && provincia && (
