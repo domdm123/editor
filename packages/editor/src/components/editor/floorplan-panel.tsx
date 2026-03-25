@@ -34,7 +34,7 @@ import {
 } from 'react'
 import { useShallow } from 'zustand/react/shallow'
 import { sfxEmitter } from '../../lib/sfx-bus'
-import { cn } from '../../lib/utils'
+import { assetPath, cn } from '../../lib/utils'
 import useEditor from '../../store/use-editor'
 import { snapToHalf } from '../tools/item/placement-math'
 import {
@@ -6882,7 +6882,7 @@ export function FloorplanPanel() {
                       alt=""
                       aria-hidden="true"
                       className="h-4 w-4 object-contain"
-                      src="/icons/blueprint.png"
+                      src={assetPath("/icons/blueprint.png")}
                     />
                   </span>
                   <span className="min-w-0 flex-1 truncate font-medium text-foreground text-sm tabular-nums">
@@ -6957,7 +6957,7 @@ export function FloorplanPanel() {
                       alt=""
                       aria-hidden="true"
                       className="h-4.5 w-4.5 object-contain"
-                      src="/icons/site.png"
+                      src={assetPath("/icons/site.png")}
                     />
                   </button>
                 </span>
@@ -6994,7 +6994,7 @@ export function FloorplanPanel() {
                       alt=""
                       aria-hidden="true"
                       className="h-4.5 w-4.5 object-contain"
-                      src="/icons/floorplan.png"
+                      src={assetPath("/icons/floorplan.png")}
                     />
                   </button>
                 </TooltipTrigger>
@@ -7044,7 +7044,7 @@ export function FloorplanPanel() {
                         alt=""
                         aria-hidden="true"
                         className="h-4 w-4 object-contain"
-                        src="/icons/floorplan.png"
+                        src={assetPath("/icons/floorplan.png")}
                       />
                     </span>
                     <div className="min-w-0">
@@ -7065,7 +7065,7 @@ export function FloorplanPanel() {
                               alt=""
                               aria-hidden="true"
                               className="h-3.5 w-3.5 shrink-0 object-contain opacity-70"
-                              src="/icons/floorplan.png"
+                              src={assetPath("/icons/floorplan.png")}
                             />
                             <p className="truncate font-medium text-foreground text-sm">
                               {guide.name || `Guide image ${index + 1}`}
@@ -7159,7 +7159,7 @@ export function FloorplanPanel() {
                         ? 'opacity-100 grayscale-0'
                         : 'opacity-60 grayscale',
                     )}
-                    src="/icons/select.png"
+                    src={assetPath("/icons/select.png")}
                   />
                 </button>
               </TooltipTrigger>

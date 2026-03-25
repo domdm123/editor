@@ -3,7 +3,7 @@
 import { Icon } from '@iconify/react'
 import { useViewer } from '@pascal-app/viewer'
 import { Diamond } from 'lucide-react'
-import { cn } from '../../../lib/utils'
+import { assetPath, cn } from '../../../lib/utils'
 import useEditor from '../../../store/use-editor'
 import { ActionButton } from './action-button'
 
@@ -30,18 +30,18 @@ const wallModeConfig: Record<
 > = {
   up: {
     icon: (props) => (
-      <img alt="Altura completa" height={20} src="/icons/room.png" width={20} {...props} />
+      <img alt="Altura completa" height={20} src={assetPath("/icons/room.png")} width={20} {...props} />
     ),
     label: 'Altura completa',
   },
   cutaway: {
     icon: (props) => (
-      <img alt="Corte" height={20} src="/icons/wallcut.png" width={20} {...props} />
+      <img alt="Corte" height={20} src={assetPath("/icons/wallcut.png")} width={20} {...props} />
     ),
     label: 'Corte',
   },
   down: {
-    icon: (props) => <img alt="Bajo" height={20} src="/icons/walllow.png" width={20} {...props} />,
+    icon: (props) => <img alt="Bajo" height={20} src={assetPath("/icons/walllow.png")} width={20} {...props} />,
     label: 'Bajo',
   },
 }
@@ -167,7 +167,7 @@ export function ViewToggles() {
         size="icon"
         variant="ghost"
       >
-        <img alt="Scans" className="h-[28px] w-[28px] object-contain" src="/icons/mesh.png" />
+        <img alt="Scans" className="h-[28px] w-[28px] object-contain" src={assetPath("/icons/mesh.png")} />
       </ActionButton>
 
       {/* Show Guides */}
@@ -183,7 +183,7 @@ export function ViewToggles() {
         size="icon"
         variant="ghost"
       >
-        <img alt="Guides" className="h-[28px] w-[28px] object-contain" src="/icons/floorplan.png" />
+        <img alt="Guides" className="h-[28px] w-[28px] object-contain" src={assetPath("/icons/floorplan.png")} />
       </ActionButton>
 
       <ActionButton
@@ -200,7 +200,7 @@ export function ViewToggles() {
               'h-[28px] w-[28px] object-contain transition-[filter,opacity] duration-200',
               isFloorplanOpen ? 'opacity-100 grayscale-0' : 'opacity-60 grayscale',
             )}
-            src="/icons/blueprint.png"
+            src={assetPath("/icons/blueprint.png")}
           />
           <span
             aria-hidden="true"

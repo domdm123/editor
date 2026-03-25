@@ -5,6 +5,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
+/** Prepend the Next.js basePath to a static asset path (for plain <img> tags). */
+export function assetPath(path: string): string {
+  return `${basePath}${path}`
+}
+
 export const isDevelopment =
   process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_VERCEL_ENV === 'development'
 

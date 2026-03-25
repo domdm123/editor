@@ -10,7 +10,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from './../../../components/ui/primitives/tooltip'
-import { cn } from './../../../lib/utils'
+import { assetPath, cn } from './../../../lib/utils'
 
 export type PanelId = 'site' | 'settings'
 
@@ -52,7 +52,7 @@ export function IconRail({ activePanel, onPanelChange, appMenuButton, className 
               <img
                 alt="Servidos Planos"
                 className="h-7 w-7 object-contain"
-                src="/servidos-icon.png"
+                src={assetPath("/servidos-icon.png")}
               />
             </div>
           </TooltipTrigger>

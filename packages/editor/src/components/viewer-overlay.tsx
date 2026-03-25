@@ -14,7 +14,7 @@ import { useViewer } from '@pascal-app/viewer'
 import { ArrowLeft, Camera, ChevronRight, Diamond, Layers, Moon, Sun } from 'lucide-react'
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import { cn } from '../lib/utils'
+import { assetPath, cn } from '../lib/utils'
 import { ActionButton } from './ui/action-menu/action-button'
 import { TooltipProvider } from './ui/primitives/tooltip'
 
@@ -41,19 +41,19 @@ const levelModeBadgeLabels: Record<'manual' | 'stacked' | 'exploded' | 'solo', s
 const wallModeConfig = {
   up: {
     icon: (props: any) => (
-      <img alt="Altura completa" height={28} src="/icons/room.png" width={28} {...props} />
+      <img alt="Altura completa" height={28} src={assetPath("/icons/room.png")} width={28} {...props} />
     ),
     label: 'Altura completa',
   },
   cutaway: {
     icon: (props: any) => (
-      <img alt="Corte" height={28} src="/icons/wallcut.png" width={28} {...props} />
+      <img alt="Corte" height={28} src={assetPath("/icons/wallcut.png")} width={28} {...props} />
     ),
     label: 'Corte',
   },
   down: {
     icon: (props: any) => (
-      <img alt="Bajo" height={28} src="/icons/walllow.png" width={28} {...props} />
+      <img alt="Bajo" height={28} src={assetPath("/icons/walllow.png")} width={28} {...props} />
     ),
     label: 'Bajo',
   },
@@ -141,7 +141,7 @@ export const ViewerOverlay = ({
           <img
             alt="Servidos"
             className="h-5 w-5 object-contain opacity-80"
-            src="/servidos-icon.png"
+            src={assetPath("/servidos-icon.png")}
           />
           <span className="font-medium text-[11px] text-muted-foreground/80 tracking-tight">
             Diseñá tu casa soñada en Argentina. 2D y 3D.
@@ -349,7 +349,7 @@ export const ViewerOverlay = ({
                 <img
                   alt="Scans"
                   className="h-[28px] w-[28px] object-contain"
-                  src="/icons/mesh.png"
+                  src={assetPath("/icons/mesh.png")}
                 />
               </ActionButton>
             )}
@@ -370,7 +370,7 @@ export const ViewerOverlay = ({
                 <img
                   alt="Guides"
                   className="h-[28px] w-[28px] object-contain"
-                  src="/icons/floorplan.png"
+                  src={assetPath("/icons/floorplan.png")}
                 />
               </ActionButton>
             )}
@@ -470,7 +470,7 @@ export const ViewerOverlay = ({
               <img
                 alt="Orbitar izquierda"
                 className="h-[28px] w-[28px] -scale-x-100 object-contain opacity-70 transition-opacity group-hover:opacity-100"
-                src="/icons/rotate.png"
+                src={assetPath("/icons/rotate.png")}
               />
             </ActionButton>
 
@@ -485,7 +485,7 @@ export const ViewerOverlay = ({
               <img
                 alt="Orbitar derecha"
                 className="h-[28px] w-[28px] object-contain opacity-70 transition-opacity group-hover:opacity-100"
-                src="/icons/rotate.png"
+                src={assetPath("/icons/rotate.png")}
               />
             </ActionButton>
 
@@ -500,7 +500,7 @@ export const ViewerOverlay = ({
               <img
                 alt="Vista superior"
                 className="h-[28px] w-[28px] object-contain opacity-70 transition-opacity group-hover:opacity-100"
-                src="/icons/topview.png"
+                src={assetPath("/icons/topview.png")}
               />
             </ActionButton>
           </div>
