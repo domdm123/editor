@@ -20,7 +20,9 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
-    unoptimized: process.env.NEXT_PUBLIC_ASSETS_CDN_URL?.startsWith('http://localhost') ?? false,
+    unoptimized:
+      !!process.env.NEXT_PUBLIC_BASE_PATH ||
+      (process.env.NEXT_PUBLIC_ASSETS_CDN_URL?.startsWith('http://localhost') ?? false),
     remotePatterns: [
       {
         protocol: 'https',
