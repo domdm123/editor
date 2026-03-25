@@ -1,9 +1,10 @@
 'use client'
 
 import { useViewer } from '@pascal-app/viewer'
-import { Moon, Ruler, Sun } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 import { motion } from 'motion/react'
 import { type ReactNode, useEffect, useState } from 'react'
+import { TemplatePickerDialog } from '../template-picker-dialog'
 import {
   Tooltip,
   TooltipContent,
@@ -61,6 +62,9 @@ export function IconRail({ activePanel, onPanelChange, appMenuButton, className 
 
       {/* Divider */}
       <div className="mb-1 h-px w-8 bg-border/50" />
+
+      {/* Template picker */}
+      <TemplatePickerDialog />
 
       {panels.map((panel) => {
         const isActive = activePanel === panel.id
