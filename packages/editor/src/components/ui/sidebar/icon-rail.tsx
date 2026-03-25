@@ -21,8 +21,8 @@ interface IconRailProps {
 }
 
 const panels: { id: PanelId; iconSrc: string; label: string }[] = [
-  { id: 'site', iconSrc: '/icons/level.png', label: 'Site' },
-  { id: 'settings', iconSrc: '/icons/settings.png', label: 'Settings' },
+  { id: 'site', iconSrc: '/icons/level.png', label: 'Proyecto' },
+  { id: 'settings', iconSrc: '/icons/settings.png', label: 'Configuración' },
 ]
 
 export function IconRail({ activePanel, onPanelChange, appMenuButton, className }: IconRailProps) {
@@ -94,7 +94,7 @@ export function IconRail({ activePanel, onPanelChange, appMenuButton, className 
               </div>
             </button>
           </TooltipTrigger>
-          <TooltipContent side="right">Toggle units (metric/imperial)</TooltipContent>
+          <TooltipContent side="right">Cambiar unidades (métrico/imperial)</TooltipContent>
         </Tooltip>
       )}
 
@@ -117,7 +117,7 @@ export function IconRail({ activePanel, onPanelChange, appMenuButton, className 
               </motion.div>
             </button>
           </TooltipTrigger>
-          <TooltipContent side="right">Toggle theme</TooltipContent>
+          <TooltipContent side="right">Cambiar tema</TooltipContent>
         </Tooltip>
       )}
     </div>

@@ -31,28 +31,28 @@ export function NodeActionMenu({
       onPointerUp={onPointerUp}
     >
       <button
-        aria-label="Move"
+        aria-label="Mover"
         className="tooltip-trigger rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         onClick={onMove}
-        title="Move"
+        title="Mover"
         type="button"
       >
         <Move className="h-4 w-4" />
       </button>
       <button
-        aria-label="Duplicate"
+        aria-label="Duplicar"
         className="tooltip-trigger rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         onClick={onDuplicate}
-        title="Duplicate"
+        title="Duplicar"
         type="button"
       >
         <Copy className="h-4 w-4" />
       </button>
       <button
-        aria-label="Delete"
+        aria-label="Eliminar"
         className="tooltip-trigger rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
         onClick={onDelete}
-        title="Delete"
+        title="Eliminar"
         type="button"
       >
         <Trash2 className="h-4 w-4" />
