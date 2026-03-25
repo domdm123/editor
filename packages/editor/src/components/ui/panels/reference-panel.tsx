@@ -42,10 +42,10 @@ export function ReferencePanel() {
     <PanelWrapper
       icon={isScan ? undefined : undefined}
       onClose={handleClose}
-      title={node.name || (isScan ? '3D Scan' : 'Guide Image')}
+      title={node.name || (isScan ? 'Escaneo 3D' : 'Imagen de referencia')}
       width={300}
     >
-      <PanelSection title="Position">
+      <PanelSection title="Posición">
         <SliderControl
           label={
             <>
@@ -102,7 +102,7 @@ export function ReferencePanel() {
         />
       </PanelSection>
 
-      <PanelSection title="Rotation">
+      <PanelSection title="Rotación">
         <SliderControl
           label={
             <>
@@ -142,11 +142,11 @@ export function ReferencePanel() {
         </div>
       </PanelSection>
 
-      <PanelSection title="Scale & Opacity">
+      <PanelSection title="Escala y opacidad">
         <SliderControl
           label={
             <>
-              XYZ<sub className="ml-[1px] text-[11px] opacity-70">scale</sub>
+              XYZ<sub className="ml-[1px] text-[11px] opacity-70">escala</sub>
             </>
           }
           max={10}
@@ -162,7 +162,7 @@ export function ReferencePanel() {
         />
 
         <SliderControl
-          label="Opacity"
+          label="Opacidad"
           max={100}
           min={0}
           onChange={(v) => handleUpdate({ opacity: v })}

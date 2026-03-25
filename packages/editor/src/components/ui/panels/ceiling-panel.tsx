@@ -118,12 +118,12 @@ export function CeilingPanel() {
     <PanelWrapper
       icon="/icons/ceiling.png"
       onClose={handleClose}
-      title={node.name || 'Ceiling'}
+      title={node.name || 'Cielorraso'}
       width={320}
     >
-      <PanelSection title="Height">
+      <PanelSection title="Altura">
         <SliderControl
-          label="Height"
+          label="Altura"
           max={6}
           min={0}
           onChange={(v) => handleUpdate({ height: v })}
@@ -134,20 +134,20 @@ export function CeilingPanel() {
         />
 
         <div className="mt-2 grid grid-cols-3 gap-1.5 px-1 pb-1">
-          <ActionButton label="Low (2.4m)" onClick={() => handleUpdate({ height: 2.4 })} />
-          <ActionButton label="Standard (2.5m)" onClick={() => handleUpdate({ height: 2.5 })} />
-          <ActionButton label="High (3.0m)" onClick={() => handleUpdate({ height: 3.0 })} />
+          <ActionButton label="Bajo (2.4m)" onClick={() => handleUpdate({ height: 2.4 })} />
+          <ActionButton label="Estándar (2.5m)" onClick={() => handleUpdate({ height: 2.5 })} />
+          <ActionButton label="Alto (3.0m)" onClick={() => handleUpdate({ height: 3.0 })} />
         </div>
       </PanelSection>
 
-      <PanelSection title="Info">
+      <PanelSection title="Información">
         <div className="flex items-center justify-between px-2 py-1 text-muted-foreground text-sm">
-          <span>Area</span>
+          <span>Área</span>
           <span className="font-mono text-white">{area.toFixed(2)} m²</span>
         </div>
       </PanelSection>
 
-      <PanelSection title="Holes">
+      <PanelSection title="Agujeros">
         {node.holes && node.holes.length > 0 ? (
           <div className="flex flex-col gap-1 pb-2">
             {node.holes.map((hole, index) => {
@@ -167,7 +167,7 @@ export function CeilingPanel() {
                     <p
                       className={`font-medium text-xs ${isEditing ? 'text-primary' : 'text-white'}`}
                     >
-                      Hole {index + 1} {isEditing && '(Editing)'}
+                      Agujero {index + 1} {isEditing && '(Editando)'}
                     </p>
                     <p className="text-[10px] text-muted-foreground">
                       {holeArea.toFixed(2)} m² · {hole.length} pts
@@ -177,7 +177,7 @@ export function CeilingPanel() {
                     {isEditing ? (
                       <ActionButton
                         className="h-7 bg-primary text-primary-foreground hover:bg-primary/90"
-                        label="Done"
+                        label="Listo"
                         onClick={() => setEditingHole(null)}
                       />
                     ) : (
@@ -204,7 +204,7 @@ export function CeilingPanel() {
             })}
           </div>
         ) : (
-          <div className="px-2 py-3 text-center text-muted-foreground text-xs">No holes</div>
+          <div className="px-2 py-3 text-center text-muted-foreground text-xs">Sin agujeros</div>
         )}
 
         <div className="px-1 pt-1 pb-1">
@@ -212,7 +212,7 @@ export function CeilingPanel() {
             className="w-full"
             disabled={editingHole?.nodeId === selectedId}
             icon={<Plus className="h-3.5 w-3.5" />}
-            label="Add Hole"
+            label="Agregar agujero"
             onClick={handleAddHole}
           />
         </div>

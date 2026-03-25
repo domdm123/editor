@@ -51,6 +51,15 @@ export function AppSidebar({
   return (
     <>
       <Sidebar className={cn('dark text-white')} variant="floating">
+        {/* Tagline banner */}
+        <div className="border-border/20 border-b px-4 py-3">
+          <p className="font-semibold text-sm text-white leading-snug tracking-tight">
+            Diseñá tu hogar<br />en Argentina
+          </p>
+          <p className="mt-0.5 text-[11px] font-medium tracking-widest uppercase" style={{ color: '#74ACDF' }}>
+            3D &amp; 2D
+          </p>
+        </div>
         <div className="flex h-full">
           {/* Icon Rail */}
           <IconRail

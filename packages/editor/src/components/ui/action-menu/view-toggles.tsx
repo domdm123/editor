@@ -8,15 +8,15 @@ import useEditor from '../../../store/use-editor'
 import { ActionButton } from './action-button'
 
 const levelModeLabels: Record<'stacked' | 'exploded' | 'solo', string> = {
-  stacked: 'Stacked',
-  exploded: 'Exploded',
+  stacked: 'Apilado',
+  exploded: 'Expandido',
   solo: 'Solo',
 }
 
 const levelModeBadgeLabels: Record<'manual' | 'stacked' | 'exploded' | 'solo', string> = {
-  manual: 'Stack',
-  stacked: 'Stack',
-  exploded: 'Exploded',
+  manual: 'Apilar',
+  stacked: 'Apilar',
+  exploded: 'Expandido',
   solo: 'Solo',
 }
 
@@ -30,19 +30,19 @@ const wallModeConfig: Record<
 > = {
   up: {
     icon: (props) => (
-      <img alt="Full Height" height={20} src="/icons/room.png" width={20} {...props} />
+      <img alt="Altura completa" height={20} src="/icons/room.png" width={20} {...props} />
     ),
-    label: 'Full Height',
+    label: 'Altura completa',
   },
   cutaway: {
     icon: (props) => (
-      <img alt="Cutaway" height={20} src="/icons/wallcut.png" width={20} {...props} />
+      <img alt="Corte" height={20} src="/icons/wallcut.png" width={20} {...props} />
     ),
-    label: 'Cutaway',
+    label: 'Corte',
   },
   down: {
-    icon: (props) => <img alt="Low" height={20} src="/icons/walllow.png" width={20} {...props} />,
-    label: 'Low',
+    icon: (props) => <img alt="Bajo" height={20} src="/icons/walllow.png" width={20} {...props} />,
+    label: 'Bajo',
   },
 }
 
@@ -93,7 +93,7 @@ export function ViewToggles() {
             ? 'bg-violet-500/20 text-violet-400'
             : 'hover:text-violet-400',
         )}
-        label={`Camera: ${cameraMode === 'perspective' ? 'Perspective' : 'Orthographic'}`}
+        label={`Cámara: ${cameraMode === 'perspective' ? 'Perspectiva' : 'Ortográfica'}`}
         onClick={toggleCameraMode}
         size="icon"
         variant="ghost"
@@ -113,7 +113,7 @@ export function ViewToggles() {
             ? 'text-muted-foreground/80 hover:bg-white/5 hover:text-foreground'
             : 'bg-white/10 text-foreground',
         )}
-        label={`Levels: ${levelMode === 'manual' ? 'Manual' : levelModeLabels[levelMode as keyof typeof levelModeLabels]}`}
+        label={`Plantas: ${levelMode === 'manual' ? 'Manual' : levelModeLabels[levelMode as keyof typeof levelModeLabels]}`}
         onClick={cycleLevelMode}
         size="icon"
         variant="ghost"
@@ -143,7 +143,7 @@ export function ViewToggles() {
             ? 'bg-white/10'
             : 'opacity-60 grayscale hover:bg-white/5 hover:opacity-100 hover:grayscale-0',
         )}
-        label={`Walls: ${wallModeConfig[wallMode].label}`}
+        label={`Muros: ${wallModeConfig[wallMode].label}`}
         onClick={cycleWallMode}
         size="icon"
         variant="ghost"
@@ -162,7 +162,7 @@ export function ViewToggles() {
             ? 'bg-white/10'
             : 'opacity-60 grayscale hover:bg-white/5 hover:opacity-100 hover:grayscale-0',
         )}
-        label={`Scans: ${showScans ? 'Visible' : 'Hidden'}`}
+        label={`Escaneos: ${showScans ? 'Visible' : 'Oculto'}`}
         onClick={() => setShowScans(!showScans)}
         size="icon"
         variant="ghost"
@@ -178,7 +178,7 @@ export function ViewToggles() {
             ? 'bg-white/10'
             : 'opacity-60 grayscale hover:bg-white/5 hover:opacity-100 hover:grayscale-0',
         )}
-        label={`Guides: ${showGuides ? 'Visible' : 'Hidden'}`}
+        label={`Guías: ${showGuides ? 'Visible' : 'Oculto'}`}
         onClick={() => setShowGuides(!showGuides)}
         size="icon"
         variant="ghost"
@@ -188,7 +188,7 @@ export function ViewToggles() {
 
       <ActionButton
         className={cn('overflow-visible p-0', isFloorplanOpen ? 'bg-white/10' : 'hover:bg-white/5')}
-        label={`2D floor plan: ${isFloorplanOpen ? 'Visible' : 'Hidden'}`}
+        label={`Plano 2D: ${isFloorplanOpen ? 'Visible' : 'Oculto'}`}
         onClick={toggleFloorplanOpen}
         size="icon"
         variant="ghost"
@@ -206,7 +206,7 @@ export function ViewToggles() {
             aria-hidden="true"
             className="pointer-events-none absolute -top-1 -right-1 z-10 rounded-full border border-background/80 bg-emerald-600 px-1.5 py-0.5 font-semibold text-[7px] text-white leading-none shadow-[0_4px_10px_rgba(5,150,105,0.24)]"
           >
-            New
+            Nuevo
           </span>
           <span
             aria-hidden="true"

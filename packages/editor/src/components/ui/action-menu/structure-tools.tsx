@@ -19,15 +19,15 @@ export type ToolConfig = {
 }
 
 export const tools: ToolConfig[] = [
-  { id: 'wall', iconSrc: '/icons/wall.png', label: 'Wall' },
-  // { id: 'room', iconSrc: '/icons/room.png', label: 'Room' },
-  // { id: 'custom-room', iconSrc: '/icons/custom-room.png', label: 'Custom Room' },
-  { id: 'slab', iconSrc: '/icons/floor.png', label: 'Slab' },
-  { id: 'ceiling', iconSrc: '/icons/ceiling.png', label: 'Ceiling' },
-  { id: 'roof', iconSrc: '/icons/roof.png', label: 'Gable Roof' },
-  { id: 'door', iconSrc: '/icons/door.png', label: 'Door' },
-  { id: 'window', iconSrc: '/icons/window.png', label: 'Window' },
-  { id: 'zone', iconSrc: '/icons/zone.png', label: 'Zone' },
+  { id: 'wall', iconSrc: '/icons/wall.png', label: 'Muro' },
+  // { id: 'room', iconSrc: '/icons/room.png', label: 'Habitación' },
+  // { id: 'custom-room', iconSrc: '/icons/custom-room.png', label: 'Habitación personalizada' },
+  { id: 'slab', iconSrc: '/icons/floor.png', label: 'Losa' },
+  { id: 'ceiling', iconSrc: '/icons/ceiling.png', label: 'Cielorraso' },
+  { id: 'roof', iconSrc: '/icons/roof.png', label: 'Techo' },
+  { id: 'door', iconSrc: '/icons/door.png', label: 'Puerta' },
+  { id: 'window', iconSrc: '/icons/window.png', label: 'Ventana' },
+  { id: 'zone', iconSrc: '/icons/zone.png', label: 'Zona' },
 ]
 
 export function StructureTools() {
