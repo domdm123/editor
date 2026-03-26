@@ -5,6 +5,7 @@ import type { Group } from 'three'
 import { furnishTools } from '../../../components/ui/action-menu/furnish-tools'
 import { tools } from '../../../components/ui/action-menu/structure-tools'
 import { EDITOR_LAYER } from '../../../lib/constants'
+import { assetPath } from '../../../lib/utils'
 import useEditor from '../../../store/use-editor'
 
 interface CursorSphereProps extends Omit<ThreeElements['group'], 'ref'> {
@@ -100,7 +101,7 @@ export const CursorSphere = forwardRef<Group, CursorSphereProps>(function Cursor
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             alt={activeToolConfig.label}
-            src={activeToolConfig.iconSrc}
+            src={assetPath(activeToolConfig.iconSrc)}
             style={{
               width: '100%',
               height: '100%',

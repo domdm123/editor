@@ -77,7 +77,7 @@ const FLOORPLAN_MIN_VISIBLE_WALL_THICKNESS = 0.13
 const FLOORPLAN_MAX_EXTRA_THICKNESS = 0.035
 const FLOORPLAN_PANEL_LAYOUT_STORAGE_KEY = 'pascal-editor-floorplan-panel-layout'
 const EMPTY_WALL_MITER_DATA = calculateLevelMiters([])
-const EDITOR_CURSOR = "url('/cursor.svg') 4 2, default"
+const EDITOR_CURSOR = `url('${assetPath('/cursor.svg')}') 4 2, default`
 const FLOORPLAN_CURSOR_INDICATOR_OFFSET_X = 20
 const FLOORPLAN_CURSOR_INDICATOR_OFFSET_Y = 14
 const FLOORPLAN_CURSOR_MARKER_CORE_RADIUS = 0.06
@@ -210,7 +210,7 @@ const FLOORPLAN_QUICK_BUILD_TOOLS = FLOORPLAN_QUICK_BUILD_TOOL_IDS.map((id) => {
 
   return {
     id,
-    iconSrc: toolConfig?.iconSrc ?? FLOORPLAN_QUICK_BUILD_TOOL_FALLBACK_ICONS[id],
+    iconSrc: assetPath(toolConfig?.iconSrc ?? FLOORPLAN_QUICK_BUILD_TOOL_FALLBACK_ICONS[id]),
     label: FLOORPLAN_QUICK_BUILD_TOOL_LABELS[id],
   }
 })

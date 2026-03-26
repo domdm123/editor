@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="es"
     >
       <head>
-        <link href="/favicon.png" rel="icon" type="image/png" />
+        <link href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.png`} rel="icon" type="image/png" />
         {process.env.NODE_ENV === 'development' && (
           <Script
             crossOrigin="anonymous"
