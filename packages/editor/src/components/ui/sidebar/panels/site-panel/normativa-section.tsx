@@ -229,6 +229,9 @@ export function NormativaSection() {
               ))}
             </select>
             {nota && <p className="text-muted-foreground text-[10px] leading-relaxed">{nota}</p>}
+            <p className="text-muted-foreground/60 text-[9px] italic leading-relaxed">
+              Valores orientativos. Las regulaciones varían por municipio. Consultá con un arquitecto matriculado.
+            </p>
           </div>
 
           {/* Retiro inputs */}
