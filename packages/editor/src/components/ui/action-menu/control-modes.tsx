@@ -2,7 +2,7 @@
 
 import { type LucideIcon, Pencil, Trash2 } from 'lucide-react'
 import Image from 'next/image'
-import { cn } from './../../../lib/utils'
+import { assetPath, cn } from './../../../lib/utils'
 import useEditor, { type Mode, type Phase } from './../../../store/use-editor'
 import { ActionButton } from './action-button'
 
@@ -119,7 +119,7 @@ export function ControlModes() {
                   isActive && 'opacity-100 grayscale-0',
                 )}
                 height={28}
-                src={m.imageSrc}
+                src={assetPath(m.imageSrc!)}
                 width={28}
               />
             ) : (

@@ -4,6 +4,7 @@ import type { WindowNode } from '@pascal-app/core'
 import { useViewer } from '@pascal-app/viewer'
 import Image from 'next/image'
 import { useState } from 'react'
+import { assetPath } from './../../../../../lib/utils'
 import useEditor from './../../../../../store/use-editor'
 import { InlineRenameInput } from './inline-rename-input'
 import { focusTreeNode, handleTreeSelection, TreeNodeWrapper } from './tree-node'
@@ -32,7 +33,7 @@ export function WindowTreeNode({ node, depth, isLast }: WindowTreeNodeProps) {
       expanded={false}
       hasChildren={false}
       icon={
-        <Image alt="" className="object-contain" height={14} src="/icons/window.png" width={14} />
+        <Image alt="" className="object-contain" height={14} src={assetPath("/icons/window.png")} width={14} />
       }
       isHovered={isHovered}
       isLast={isLast}

@@ -3,6 +3,7 @@
 import { type AnyNode, type AnyNodeId, useScene, type WallNode } from '@pascal-app/core'
 import { useViewer } from '@pascal-app/viewer'
 import { useCallback } from 'react'
+import { assetPath } from '../../../lib/utils'
 import { PanelSection } from '../controls/panel-section'
 import { SliderControl } from '../controls/slider-control'
 import { PanelWrapper } from './panel-wrapper'
@@ -40,7 +41,7 @@ export function WallPanel() {
 
   return (
     <PanelWrapper
-      icon="/icons/wall.png"
+      icon={assetPath("/icons/wall.png")}
       onClose={handleClose}
       title={node.name || 'Muro'}
       width={280}

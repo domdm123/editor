@@ -2,6 +2,7 @@ import { type AnyNodeId, useScene, type WallNode } from '@pascal-app/core'
 import { useViewer } from '@pascal-app/viewer'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { assetPath } from './../../../../../lib/utils'
 import useEditor from './../../../../../store/use-editor'
 import { InlineRenameInput } from './inline-rename-input'
 import { focusTreeNode, handleTreeSelection, TreeNode, TreeNodeWrapper } from './tree-node'
@@ -71,7 +72,7 @@ export function WallTreeNode({ node, depth, isLast }: WallTreeNodeProps) {
       expanded={expanded}
       hasChildren={node.children.length > 0}
       icon={
-        <Image alt="" className="object-contain" height={14} src="/icons/wall.png" width={14} />
+        <Image alt="" className="object-contain" height={14} src={assetPath("/icons/wall.png")} width={14} />
       }
       isHovered={isHovered}
       isLast={isLast}

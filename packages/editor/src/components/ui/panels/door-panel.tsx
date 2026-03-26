@@ -5,6 +5,7 @@ import { useViewer } from '@pascal-app/viewer'
 import { BookMarked, Copy, FlipHorizontal2, Move, Trash2 } from 'lucide-react'
 import { useCallback } from 'react'
 import { usePresetsAdapter } from '../../../contexts/presets-context'
+import { assetPath } from '../../../lib/utils'
 import { sfxEmitter } from '../../../lib/sfx-bus'
 import useEditor from '../../../store/use-editor'
 import { ActionButton, ActionGroup } from '../controls/action-button'
@@ -175,7 +176,7 @@ export function DoorPanel() {
 
   return (
     <PanelWrapper
-      icon="/icons/door.png"
+      icon={assetPath("/icons/door.png")}
       onClose={handleClose}
       title={node.name || 'Door'}
       width={320}

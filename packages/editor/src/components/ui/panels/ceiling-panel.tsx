@@ -4,6 +4,7 @@ import { type AnyNode, type CeilingNode, useScene } from '@pascal-app/core'
 import { useViewer } from '@pascal-app/viewer'
 import { Edit, Plus, Trash2 } from 'lucide-react'
 import { useCallback, useEffect } from 'react'
+import { assetPath } from '../../../lib/utils'
 import useEditor from '../../../store/use-editor'
 import { ActionButton } from '../controls/action-button'
 import { PanelSection } from '../controls/panel-section'
@@ -116,7 +117,7 @@ export function CeilingPanel() {
 
   return (
     <PanelWrapper
-      icon="/icons/ceiling.png"
+      icon={assetPath("/icons/ceiling.png")}
       onClose={handleClose}
       title={node.name || 'Cielorraso'}
       width={320}

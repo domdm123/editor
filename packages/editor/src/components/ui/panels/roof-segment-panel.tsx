@@ -12,6 +12,7 @@ import { useViewer } from '@pascal-app/viewer'
 import { Copy, Move, Trash2 } from 'lucide-react'
 import { useCallback } from 'react'
 import { sfxEmitter } from '../../../lib/sfx-bus'
+import { assetPath } from '../../../lib/utils'
 import useEditor from '../../../store/use-editor'
 import { ActionButton, ActionGroup } from '../controls/action-button'
 import { MetricControl } from '../controls/metric-control'
@@ -112,7 +113,7 @@ export function RoofSegmentPanel() {
 
   return (
     <PanelWrapper
-      icon="/icons/roof.png"
+      icon={assetPath("/icons/roof.png")}
       onBack={handleBack}
       onClose={handleClose}
       title={node.name || 'Segmento de techo'}

@@ -3,7 +3,7 @@
 import NextImage from 'next/image'
 import { useContextualTools } from '../../../hooks/use-contextual-tools'
 
-import { cn } from '../../../lib/utils'
+import { assetPath, cn } from '../../../lib/utils'
 import useEditor, {
   type CatalogCategory,
   type StructureTool,
@@ -88,7 +88,7 @@ export function StructureTools() {
               alt={tool.label}
               className="size-full object-contain"
               height={28}
-              src={tool.iconSrc}
+              src={assetPath(tool.iconSrc)}
               width={28}
             />
           </ActionButton>

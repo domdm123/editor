@@ -5,6 +5,7 @@ import { useViewer } from '@pascal-app/viewer'
 import { BookMarked, Copy, FlipHorizontal2, Move, Trash2 } from 'lucide-react'
 import { useCallback } from 'react'
 import { usePresetsAdapter } from '../../../contexts/presets-context'
+import { assetPath } from '../../../lib/utils'
 import { sfxEmitter } from '../../../lib/sfx-bus'
 import useEditor from '../../../store/use-editor'
 import { ActionButton, ActionGroup } from '../controls/action-button'
@@ -176,7 +177,7 @@ export function WindowPanel() {
 
   return (
     <PanelWrapper
-      icon="/icons/window.png"
+      icon={assetPath("/icons/window.png")}
       onClose={handleClose}
       title={node.name || 'Window'}
       width={320}

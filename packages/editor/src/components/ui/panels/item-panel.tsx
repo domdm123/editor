@@ -5,7 +5,7 @@ import { useViewer } from '@pascal-app/viewer'
 import { Copy, Link, Link2Off, Move, Trash2 } from 'lucide-react'
 import { useCallback, useState } from 'react'
 import { sfxEmitter } from '../../../lib/sfx-bus'
-import { cn } from '../../../lib/utils'
+import { assetPath, cn } from '../../../lib/utils'
 import useEditor from '../../../store/use-editor'
 import { ActionButton, ActionGroup } from '../controls/action-button'
 import { PanelSection } from '../controls/panel-section'
@@ -79,7 +79,7 @@ export function ItemPanel() {
 
   return (
     <PanelWrapper
-      icon={node.asset.thumbnail || '/icons/furniture.png'}
+      icon={node.asset.thumbnail || assetPath('/icons/furniture.png')}
       onClose={handleClose}
       title={node.name || node.asset.name}
       width={300}
