@@ -15,6 +15,42 @@ import { CATALOG_ITEMS } from './catalog-items'
 
 const PLACEMENT_TAGS = new Set(['floor', 'wall', 'ceiling', 'countertop'])
 
+// Spanish translations for catalog tags shown in the UI
+const TAG_LABELS: Record<string, string> = {
+  // Placement tags
+  floor: 'Piso',
+  wall: 'Pared',
+  ceiling: 'Techo',
+  countertop: 'Mesada',
+  // Functional tags
+  fitness: 'Fitness',
+  kids: 'Niños',
+  decor: 'Decoración',
+  leisure: 'Ocio',
+  vegetation: 'Vegetación',
+  storage: 'Almacenamiento',
+  structure: 'Estructura',
+  lighting: 'Iluminación',
+  bedroom: 'Dormitorio',
+  seating: 'Asientos',
+  table: 'Mesas',
+  kitchen: 'Cocina',
+  bathroom: 'Baño',
+  outdoor: 'Exterior',
+  electronics: 'Electrónica',
+  sports: 'Deportes',
+  garage: 'Garaje',
+  fencing: 'Cerco',
+  large: 'Grande',
+  climate: 'Clima',
+  safety: 'Seguridad',
+  electrical: 'Eléctrico',
+}
+
+function tagLabel(tag: string): string {
+  return TAG_LABELS[tag] ?? tag.replace(/-/g, ' ')
+}
+
 export function ItemCatalog({ category }: { category: CatalogCategory }) {
   const selectedItem = useEditor((state) => state.selectedItem)
   const setSelectedItem = useEditor((state) => state.setSelectedItem)
@@ -91,7 +127,7 @@ export function ItemCatalog({ category }: { category: CatalogCategory }) {
                 onClick={() => setActivePlacementTag(null)}
                 type="button"
               >
-                All
+                Todos
               </button>
               {placementTags.map((tag) => {
                 const count = placementCount(tag)
@@ -112,7 +148,7 @@ export function ItemCatalog({ category }: { category: CatalogCategory }) {
                     onClick={() => setActivePlacementTag(isActive ? null : tag)}
                     type="button"
                   >
-                    {tag}
+                    {tagLabel(tag)}
                     <span
                       className={cn(
                         'text-[10px]',
@@ -149,7 +185,7 @@ export function ItemCatalog({ category }: { category: CatalogCategory }) {
                     onClick={() => setActiveFunctionalTag(isActive ? null : tag)}
                     type="button"
                   >
-                    {tag}
+                    {tagLabel(tag)}
                     <span
                       className={cn(
                         'text-[10px]',
@@ -195,7 +231,7 @@ export function ItemCatalog({ category }: { category: CatalogCategory }) {
                   {attachmentIcon && (
                     <div className="absolute right-0.5 bottom-0.5 flex h-4 w-4 items-center justify-center rounded bg-black/60">
                       <Image
-                        alt={item.attachTo === 'ceiling' ? 'Ceiling attachment' : 'Wall attachment'}
+                        alt={item.attachTo === 'ceiling' ? 'Techo' : 'Pared'}
                         className="h-4 w-4"
                         height={16}
                         src={attachmentIcon}
